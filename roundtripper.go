@@ -32,6 +32,8 @@ func (zrt *ZmqTripper) RoundTrip(
 	var channeler *goczmq.Channeler
 	var ok bool
 
+	// XXX: should the key for requst type be a url param, header, or
+	// registered with a transport separately
 	key := req.URL.Scheme + req.URL.Host
 	tcpHost := "tcp://" + req.URL.Host
 
